@@ -1,0 +1,30 @@
+﻿@using MVCLibrary.Models.Entity
+@model List<Categories>
+@{
+    ViewBag.Title = "Layout";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<h2>Category operation</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    @foreach(var category in Model)
+     {
+        <tr>
+            <td>@category.Id</td>
+            <td>@category.Name</td>
+            <td><a href="/Category/CategoryBring/@category.Id" class="btn btn-success">Update</a></td>
+            <td><a href="/Category/CategoryDelete/@category.Id" class="btn btn-danger">Delete</a></td>
+
+        </tr>       
+     }
+</table>
+
+<a href="/Category/CategoryAdd/" class="btn btn-primary">New Category Add</a>
