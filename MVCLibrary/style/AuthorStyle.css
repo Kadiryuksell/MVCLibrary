@@ -1,0 +1,27 @@
+﻿.container {
+    width: 80vw;
+    display: flex;
+    margin-left: 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.author {
+    width: 400px;
+    margin-right: 50px;
+}
+
+.Detail {
+    width: 400px;
+}
+
+.container label {
+    margin-top: 15px;
+}
+
+button {
+    width: 120px;
+    margin-top: 15px;
+    margin-left: 15px;
+}

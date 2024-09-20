@@ -1,0 +1,35 @@
+﻿@model MVCLibrary.Models.Entity.Authors
+@{
+    ViewBag.Title = "AuthorUpdate";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<link href="~/style/AuthorStyle.css" rel="stylesheet" />
+
+@using (Html.BeginForm("AuthorUpdate", "Author", FormMethod.Post))
+{
+    <div class="container">
+        <div class="author">
+            <label>ID</label>
+            @Html.TextBoxFor(p => p.Id, new { @class = "form-control", @readonly = "readonly" })
+
+            <label>Name</label>
+            @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
+
+            <label>Last Name</label>
+            @Html.TextBoxFor(p => p.LastName, new { @class = "form-control" })
+        </div>
+
+        <div class="Detail">
+
+            <label>Detail</label>
+            @Html.TextAreaFor(p => p.Detail, new { @class = "form-control" })
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-success">Author Update</button>
+    </div>
+
+
+}
+
+

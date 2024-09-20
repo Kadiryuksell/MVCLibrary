@@ -9,51 +9,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-body {font-family: "Lato", sans-serif;}
+        body {
+            font-family: "Lato", sans-serif;
+        }
 
-.sidebar {
-  height: 100%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 16px;
-}
+        .sidebar {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 16px;
+        }
 
-.sidebar a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 16px;
-  color: white;
-  display: block;
-}
+            .sidebar a {
+                padding: 6px 8px 6px 16px;
+                text-decoration: none;
+                font-size: 16px;
+                color: white;
+                display: block;
+            }
 
-.sidebar a:hover {
-    color: rgb(118, 126, 222);
-}
+                .sidebar a:hover {
+                    color: rgb(118, 126, 222);
+                }
 
-.main {
-  margin-left: 200px; /* Same as the width of the sidenav */
-  padding: 0px 10px;
-}
+        .main {
+            margin-left: 200px; /* Same as the width of the sidenav */
+            padding: 0px 10px;
+        }
 
-@@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
+        @@media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+
+                .sidebar a {
+                    font-size: 18px;
+                }
+        }
     </style>
 </head>
 <body>
 
     <div class="sidebar">
         <a href="#"><i class="glyphicon glyphicon-home"></i>&nbsp; Main</a>
-        <a href="#"><i class="glyphicon glyphicon-list"></i>&nbsp; Categories</a>
+        <a href="/Category/CategoryList/"><i class="glyphicon glyphicon-list"></i>&nbsp; Categories</a>
         <a href="#"><i class="glyphicon glyphicon-book"></i>&nbsp; Books</a>
         <a href="#"><i class="glyphicon glyphicon-user"></i>&nbsp; Users</a>
-        <a href="#"><i class="glyphicon glyphicon-pencil"></i>&nbsp; Authors</a>
+        <a href="/Author/AuthorList/"><i class="glyphicon glyphicon-pencil"></i>&nbsp; Authors</a>
         <a href="#"><i class="glyphicon glyphicon-briefcase"></i>&nbsp; Employee</a>
         <a href="#"><i class="glyphicon glyphicon-save"></i>&nbsp; Lend a book</a>
         <a href="#"><i class="glyphicon glyphicon-open"></i>&nbsp; Borrow a book</a>
@@ -66,7 +73,7 @@ body {font-family: "Lato", sans-serif;}
 
     <div class="main">
         @RenderBody()
-       </div>
+    </div>
 
 </body>
 </html>
