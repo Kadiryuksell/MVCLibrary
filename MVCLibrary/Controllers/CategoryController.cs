@@ -41,10 +41,10 @@ namespace MVCLibrary.Controllers
             var categoryId = db.Categories.Find(id);
             return View("CategoryBring", categoryId);
         }
-        public ActionResult CategoryUpdate(Categories categories) 
+        public ActionResult CategoryUpdate(Categories category) 
         {
-            var category = db.Categories.Find(categories.Id);
-            category.Name = categories.Name;
+            var categoryId = db.Categories.Find(category.Id);
+            categoryId.Name = category.Name;
             db.SaveChanges();
             return RedirectToAction("CategoryList");
         }
