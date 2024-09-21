@@ -3,12 +3,12 @@
     ViewBag.Title = "AuthorUpdate";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
-<link href="~/style/AuthorStyle.css" rel="stylesheet" />
+<link href="~/style/AddAndBringStyle.css" rel="stylesheet" />
 
 @using (Html.BeginForm("AuthorUpdate", "Author", FormMethod.Post))
 {
     <div class="container">
-        <div class="author">
+        <div class="left-side">
             <label>ID</label>
             @Html.TextBoxFor(p => p.Id, new { @class = "form-control", @readonly = "readonly" })
 
@@ -19,7 +19,7 @@
             @Html.TextBoxFor(p => p.LastName, new { @class = "form-control" })
         </div>
 
-        <div class="Detail">
+        <div class="right-side">
 
             <label>Detail</label>
             @Html.TextAreaFor(p => p.Detail, new { @class = "form-control" })

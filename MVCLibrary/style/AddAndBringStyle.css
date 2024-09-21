@@ -1,4 +1,5 @@
-﻿.container {
+﻿
+.container {
     width: 80vw;
     display: flex;
     margin-left: 0px;
@@ -7,17 +8,19 @@
     flex-wrap: wrap;
 }
 
-.author {
+.container label {
+        margin-top: 15px;
+
+}
+
+.right-side {
     width: 400px;
     margin-right: 50px;
 }
 
-.Detail {
+.left-side {
     width: 400px;
-}
-
-.container label {
-    margin-top: 15px;
+    margin-right: 50px;
 }
 
 button {
