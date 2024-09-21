@@ -1,0 +1,29 @@
+﻿@model MVCLibrary.Models.Entity.Employee
+@{
+    ViewBag.Title = "EmployeeAdd";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<link href="~/style/AddAndBringStyle.css" rel="stylesheet" />
+<h2>Employee Add Operation</h2>
+
+
+<form class="form-group" method="post">
+    <div class="container">
+        <div class="left-side">
+            <label>Name</label>
+            @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(p=>p.Name,"",new {@style="color:red"})
+        </div>
+
+        <div class="right-side">
+            <label>Last Name</label>
+            @Html.TextBoxFor(p => p.LastName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(p => p.LastName, "", new { @style = "color:red" })
+        </div>
+    </div>
+
+    <button class="btn btn-primary">Employee Add</button>
+
+</form>
+

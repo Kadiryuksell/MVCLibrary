@@ -1,0 +1,32 @@
+﻿@model MVCLibrary.Models.Entity.Employee
+@{
+    ViewBag.Title = "EmployeeBring";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h1>Employee Update</h1>
+
+<link href="~/style/AddAndBringStyle.css" rel="stylesheet" />
+
+@using (Html.BeginForm("EmployeeUpdate", "Employee", FormMethod.Post))
+{
+    <div class="container">
+        <div class="left-side">
+            <label>ID</label>
+            @Html.TextBoxFor(p => p.Id, new { @class = "form-control", @readonly = "readonly" })
+            <label>Name</label>
+            @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
+
+        </div>
+
+        <div class="right-side">
+            <label>Last Name</label>
+            @Html.TextBoxFor(p => p.LastName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div>
+        <button style="width:140px" class="btn btn-success">Employee Update</button>
+    </div>
+
+
+}
