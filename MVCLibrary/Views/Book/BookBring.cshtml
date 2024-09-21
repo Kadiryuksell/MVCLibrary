@@ -1,0 +1,42 @@
+﻿@model MVCLibrary.Models.Entity.Books
+@{
+    ViewBag.Title = "BookBring";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<link href="~/style/AddAndBringStyle.css" rel="stylesheet" />
+
+@using (Html.BeginForm("BookUpdate", "Book", FormMethod.Post))
+{
+    <div class="container">
+        <div class="left-side">
+            <label>ID</label>
+            @Html.TextBoxFor(p => p.Id, new { @class = "form-control", @readonly = "readonly" })
+
+            <label>Title</label>
+            @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
+
+            <label>Author</label>
+            @Html.DropDownListFor(p => p.Authors.Id, (List<SelectListItem>)ViewBag.authors, new { @class = "form-control" })
+
+            <label>Category</label>
+            @Html.DropDownListFor(p => p.Categories.Id, (List<SelectListItem>)ViewBag.categories, new { @class = "form-control" })
+        </div>
+
+        <div class="right-side">
+
+            <label>Year Of Publication</label>
+            @Html.TextBoxFor(p => p.PublicationYear, new { @class = "form-control" })
+            <label>Publisher Company</label>
+            @Html.TextBoxFor(p => p.PublisherCompany, new { @class = "form-control" })
+            <label>Page Count</label>
+            @Html.TextBoxFor(p => p.PageCount, new { @class = "form-control" })
+            <label>stock</label>
+            @Html.TextBoxFor(p => p.State, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-success">Book Update</button>
+    </div>
+
+}

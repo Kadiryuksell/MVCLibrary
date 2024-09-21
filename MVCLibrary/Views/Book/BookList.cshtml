@@ -1,0 +1,49 @@
+﻿@using MVCLibrary.Models.Entity
+@model List<Books>
+@{
+    ViewBag.Title = "BookList";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<form action="/Book/BookSearch" method="get" style="margin-bottom:15px; margin-top:20px">
+    <label style="font-size:18px;">Author or Book Name</label>
+    <input type="text" name="searchterm" class="form-control" placeholder="Search Name" style="margin-bottom:15px;font-size:16px; width: 30vw;" />
+    <input type="submit" value="Search" class="btn btn-primary searchSubmit" />
+</form>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Year Of Publication</th>
+        <th>Publisher Company</th>
+        <th>Page Count</th>
+        <th>stock</th>
+        <th>Update</th>
+        <th>Delete</th>
+
+    </tr>
+    @foreach (var book in Model)
+    {
+        <tr>
+
+            <td>@book.Id</td>
+            <td>@book.Name</td>
+            <td>@(book.Authors != null ? book.Authors.Name + " " + book.Authors.LastName : "No Author")</td>
+            <td>@(book.Categories != null ? book.Categories.Name : "No Category")</td>
+            <td>@book.PublicationYear</td>
+            <td>@book.PublisherCompany</td>
+            <td>@book.PageCount</td>
+            <td>@book.State</td>
+            <td><a href="/Book/BookBring/@book.Id" class="btn btn-success">Update</a></td>
+            <td><a href="/Book/BookDelete/@book.Id" class="btn btn-danger">Delete</a></td>
+        </tr>
+
+    }
+</table>
+
+<a href="/Book/BookAdd/" class="btn btn-primary">New Book Add</a>
+

@@ -4,12 +4,13 @@
     ViewBag.Title = "AuthorAdd";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
-<link href="~/style/AuthorStyle.css" rel="stylesheet" />
+<link href="~/style/AddAndBringStyle.css" rel="stylesheet" />
 <h2>Author Add Operation</h2>
 
-<form class="form-check-group" method="post">
+
+<form class="form-group" method="post">
     <div class="container">
-        <div class="author">
+        <div class="left-side">
             <label>Name</label>
             @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
             <label>Last Name</label>
@@ -17,7 +18,7 @@
 
         </div>
 
-        <div class="Detail">
+        <div class="right-side">
             <label>Detail</label>
             @Html.TextAreaFor(p => p.Detail, new { @class = "form-control" })
         </div>
