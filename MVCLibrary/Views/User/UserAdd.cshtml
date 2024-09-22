@@ -1,0 +1,60 @@
+﻿@model MVCLibrary.Models.Entity.Users
+@{
+    ViewBag.Title = "UserAdd";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<link href="~/style/AddAndBringStyle.css" rel="stylesheet" />
+<h2>User Add Operation</h2>
+
+
+<form class="form-group" method="post">
+    <div class="container">
+        <div class="left-side">
+
+            <div>
+                <label>Name</label>
+                @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Name, "", new { @style = "color:red" })
+            </div>
+
+            <div>
+                <label>Last Name</label>
+                @Html.TextBoxFor(p => p.LastName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.LastName, "", new { @style = "color:red" })
+            </div>
+
+
+            <div>
+                <label>User Name</label>
+                @Html.TextBoxFor(p => p.UserName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.UserName, "", new { @style = "color:red" })
+            </div>
+
+
+            <label>School</label>
+            @Html.TextBoxFor(p => p.School, new { @class = "form-control" })
+        </div>
+
+        <div class="right-side">
+            <label>Phone Number</label>
+            @Html.TextBoxFor(p => p.PhoneNumber, new { @class = "form-control" })
+            <div>
+                <label>Email</label>
+                @Html.TextBoxFor(p => p.Mail, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Mail, "", new { @style = "color:red" })
+            </div>
+            <div>
+                <label>Password</label>
+                @Html.TextBoxFor(p => p.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Password, "", new { @style = "color:red" })
+            </div>
+
+
+        </div>
+    </div>
+
+    <button class="btn btn-primary">User Add</button>
+
+</form>
+

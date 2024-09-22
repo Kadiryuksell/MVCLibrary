@@ -1,0 +1,72 @@
+﻿@model MVCLibrary.Models.Entity.Users
+@{
+    ViewBag.Title = "UserBring";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<link href="~/style/AddAndBringStyle.css" rel="stylesheet" />
+
+<h1>User Update</h1>
+
+@using (Html.BeginForm("UserUpdate", "User", FormMethod.Post))
+{
+    <div class="container">
+        <div class="left-side">
+            <div>
+                <label>ID</label>
+                @Html.TextBoxFor(p => p.Id, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+
+            <div>
+                <label>Name</label>
+                @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Name, "", new { @style = "color:red" })
+            </div>
+
+            <div>
+                <label>Last Name</label>
+                @Html.TextBoxFor(p => p.LastName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.LastName, "", new { @style = "color:red" })
+            </div>
+
+
+            <div>
+                <label>User Name</label>
+                @Html.TextBoxFor(p => p.UserName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.UserName, "", new { @style = "color:red" })
+            </div>
+
+        </div>
+
+        <div class="right-side">
+
+            <div>
+                <label>School</label>
+                @Html.TextBoxFor(p => p.School, new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>Phone Number</label>
+                @Html.TextBoxFor(p => p.PhoneNumber, new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>Email</label>
+                @Html.TextBoxFor(p => p.Mail, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Mail, "", new { @style = "color:red" })
+            </div>
+            <div>
+                <label>Password</label>
+                @Html.TextBoxFor(p => p.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Password, "", new { @style = "color:red" })
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary">User Update</button>
+}
+
+
+
+
+
