@@ -1,0 +1,39 @@
+﻿@model MVCLibrary.Models.Entity.LibraryOperations
+
+@{
+    ViewBag.Title = "LendBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h1>Lend Book</h1>
+
+<link href="~/style/AddAndBringStyle.css" rel="stylesheet" />
+
+<form class="form-group" method="post">
+    <div class="container">
+        <div class="left-side">
+
+            <label>Book</label>
+            @Html.DropDownListFor(p => p.Books.Id, (List<SelectListItem>)ViewBag.bookValues, new { @class = "form-control" })
+            <label>User</label>
+            @Html.DropDownListFor(p => p.Users.Id, (List<SelectListItem>)ViewBag.userValues, new { @class = "form-control" })
+
+            <label>Employee</label>
+            @Html.DropDownListFor(p => p.Employee.Id, (List<SelectListItem>)ViewBag.employeeValues, new { @class = "form-control" })
+        </div>
+
+        <div class="right-side">
+
+            <label>Date of Lending</label>
+            <input type="text" class="form-control" name="PurchaseDate" value="@DateTime.Now.ToShortDateString()" />
+
+            <label>Date Of Return</label>
+            <input type="text" class="form-control" name="ReturnDate" value="@DateTime.Now.AddDays(7).ToShortDateString()" />
+
+            <input type="hidden"  value="false" name="OperationState"/>
+        </div>
+    </div>
+
+    <button class="btn btn-primary">Lend a book</button>
+
+</form>

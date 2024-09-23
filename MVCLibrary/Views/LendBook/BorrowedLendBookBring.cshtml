@@ -1,0 +1,46 @@
+﻿@model MVCLibrary.Models.Entity.LibraryOperations
+@{
+    ViewBag.Title = "BorrowedLendBookBring";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<link href="~/style/AddAndBringStyle.css" rel="stylesheet" />
+
+<h1">Borrowed Lend Book Update</h1">
+
+@using (Html.BeginForm("BorrowedLendBookUpdate", "LendBook", FormMethod.Post))
+{
+    <div class="container">
+        <div class="left-side">
+
+            <label>Id</label>
+            @Html.TextBoxFor(p => p.Id, new { @class = "form-control", @readonly = "readonly" })
+
+            <label>Book</label>
+            @Html.DropDownListFor(p => p.Books.Id, (List<SelectListItem>)ViewBag.bookValues, new { @class = "form-control" })
+            <label>User</label>
+            @Html.DropDownListFor(p => p.Users.Id, (List<SelectListItem>)ViewBag.userValues, new { @class = "form-control" })
+
+            <label>Employee</label>
+            @Html.DropDownListFor(p => p.Employee.Id, (List<SelectListItem>)ViewBag.employeeValues, new { @class = "form-control" })
+
+        </div>
+
+        <div class="right-side">
+            
+
+            <label>Date of Lending</label>
+            @Html.TextBoxFor(p => p.PurchaseDate, "{0: dd.MM.yyyy}", new { @class = "form-control", @readonly = "readonly" })
+
+            <label>Date of Return</label>
+            @Html.TextBoxFor(p => p.ReturnDate, "{0: dd.MM.yyyy}", new { @class = "form-control", @readonly = "readonly" })
+
+            <label>The Date the Member Brought</label>
+            <input type="text" class="form-control" name="DateMemberBrought" value="@DateTime.Now.ToShortDateString()" />
+
+        </div>
+    </div>
+
+    <button style="width:250px" class="btn btn-primary">Take back the borrowed book</button>
+
+}

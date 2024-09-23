@@ -16,15 +16,23 @@
             @Html.DropDownListFor(p => p.Categories.Id, (List<SelectListItem>)ViewBag.categories, new { @class = "form-control" })
             <label>Author</label>
             @Html.DropDownListFor(p => p.Authors.Id, (List<SelectListItem>)ViewBag.authors, new { @class = "form-control" })
+
+            <label>Page Count</label>
+            @Html.TextBoxFor(p => p.PageCount, new { @class = "form-control" })
         </div>
 
         <div class="right-side">
-            <label>Page Count</label>
-            @Html.TextBoxFor(p => p.PageCount, new { @class = "form-control" })
+
             <label>Year Of Publication</label>
             @Html.TextBoxFor(p => p.PublicationYear, new { @class = "form-control" })
             <label>Publisher Company</label>
             @Html.TextBoxFor(p => p.PublisherCompany, new { @class = "form-control" })
+
+            <label for="stock">Stock</label>
+            <select id="stock" name="State" class="form-control">
+                <option value="True">True</option>
+                <option value="False">False</option>
+            </select>
 
         </div>
     </div>
