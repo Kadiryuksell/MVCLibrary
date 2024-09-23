@@ -1,0 +1,38 @@
+﻿@using MVCLibrary.Models.Entity
+@model List<LibraryOperations>
+@{
+    ViewBag.Title = "BorrowedBookList";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h1>List of Borrowed Books</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Book Name</th>
+        <th>User</th>
+        <th>Employee</th>
+        <th>Date of Lending</th>
+        <th>Date Of Return</th>
+        <th>Return The Book</th>
+    </tr>
+    @foreach (var operation in Model)
+    {
+        <tr>
+
+            <td>@operation.Id</td>
+            <td>@(operation.Books != null ? operation.Books.Name : "No Book")</td>
+            <td>@(operation.Users != null ? operation.Users.Name + " " + operation.Users.LastName : "No User")</td>
+            <td>@(operation.Employee != null ? operation.Employee.Name + " " + operation.Employee.LastName : "No Employee")</td>
+            <td>@Convert.ToDateTime(operation.PurchaseDate).ToShortDateString()</td>
+            <td>@Convert.ToDateTime(operation.ReturnDate).ToShortDateString()</td>
+            <td><a href="/Lendbook/BorrowedLendBookBring/@operation.Id" class="btn btn-success">Return</a></td>
+        </tr>
+
+    }
+</table>
+
+
+
+

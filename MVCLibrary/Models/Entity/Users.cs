@@ -11,8 +11,7 @@ namespace MVCLibrary.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Users
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,25 +22,12 @@ namespace MVCLibrary.Models.Entity
         }
     
         public int Id { get; set; }
-        [Required(ErrorMessage ="Name can not null.")]
-        [StringLength(20,ErrorMessage = "You can enter up to 20 characters.")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Last Name can not null.")]
-        [StringLength(20, ErrorMessage = "You can enter up to 20 characters.")]
         public string LastName { get; set; }
-        [Required(ErrorMessage = "Email can not null.")]
-        [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
         public string Mail { get; set; }
-        [Required(ErrorMessage = "User name can not null.")]
-        [MaxLength(30, ErrorMessage = "You can enter up to 30 characters.")]
-        [MinLength(3, ErrorMessage = "You can enter at least 3 characters")]
         public string UserName { get; set; }
-        [Required(ErrorMessage = "Password can not null.")]
-        [MaxLength(16, ErrorMessage = "You can enter up to 16 characters.")]
-        [MinLength(8,ErrorMessage = "You can enter at least 8 characters")]
         public string Password { get; set; }
         public string Photo { get; set; }
-        
         public string PhoneNumber { get; set; }
         public string School { get; set; }
     

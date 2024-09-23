@@ -138,7 +138,9 @@
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\LendBookController.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\OperationController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -270,6 +272,10 @@
     <Content Include="Views\User\UserList.cshtml" />
     <Content Include="Views\User\UserAdd.cshtml" />
     <Content Include="Views\User\UserBring.cshtml" />
+    <Content Include="Views\LendBook\LendBookAdd.cshtml" />
+    <Content Include="Views\LendBook\BorrowedBookList.cshtml" />
+    <Content Include="Views\LendBook\BorrowedLendBookBring.cshtml" />
+    <Content Include="Views\Operation\OperationList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

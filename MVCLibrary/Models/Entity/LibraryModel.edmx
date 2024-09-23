@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LibraryDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LibraryDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Authors">
           <Key>
             <PropertyRef Name="Id" />
@@ -60,6 +60,8 @@
           <Property Name="EmployeeId" Type="int" />
           <Property Name="PurchaseDate" Type="smalldatetime" />
           <Property Name="ReturnDate" Type="smalldatetime" />
+          <Property Name="OperationState" Type="bit" />
+          <Property Name="DateMemberBrought" Type="smalldatetime" />
         </EntityType>
         <EntityType Name="Penalties">
           <Key>
@@ -219,8 +221,7 @@
             <End Role="Penalties" EntitySet="Penalties" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LibraryDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -289,6 +290,8 @@
           <NavigationProperty Name="Employee" Relationship="Self.FK_LibraryOperations_Employee" FromRole="LibraryOperations" ToRole="Employee" />
           <NavigationProperty Name="Users" Relationship="Self.FK_LibraryOperations_Users" FromRole="LibraryOperations" ToRole="Users" />
           <NavigationProperty Name="Penalties" Relationship="Self.FK_Penalties_LibraryOperations" FromRole="LibraryOperations" ToRole="Penalties" />
+          <Property Name="OperationState" Type="Boolean" />
+          <Property Name="DateMemberBrought" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Penalties">
           <Key>
@@ -511,6 +514,8 @@
           <EntitySetMapping Name="LibraryOperations">
             <EntityTypeMapping TypeName="LibraryDbModel.LibraryOperations">
               <MappingFragment StoreEntitySet="LibraryOperations">
+                <ScalarProperty Name="DateMemberBrought" ColumnName="DateMemberBrought" />
+                <ScalarProperty Name="OperationState" ColumnName="OperationState" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="BookId" ColumnName="BookId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />

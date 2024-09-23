@@ -31,8 +31,12 @@
             @Html.TextBoxFor(p => p.PublisherCompany, new { @class = "form-control" })
             <label>Page Count</label>
             @Html.TextBoxFor(p => p.PageCount, new { @class = "form-control" })
-            <label>stock</label>
-            @Html.TextBoxFor(p => p.State, new { @class = "form-control", @readonly = "readonly" })
+
+            <label for="stock">Stock</label>
+            <select id="stock" name="State" class="form-control">
+                <option value="True">True</option>
+                <option value="False">False</option>
+            </select>
         </div>
     </div>
     <div>

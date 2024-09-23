@@ -26,6 +26,8 @@ namespace MVCLibrary.Models.Entity
         public Nullable<int> EmployeeId { get; set; }
         public Nullable<System.DateTime> PurchaseDate { get; set; }
         public Nullable<System.DateTime> ReturnDate { get; set; }
+        public Nullable<bool> OperationState { get; set; }
+        public Nullable<System.DateTime> DateMemberBrought { get; set; }
     
         public virtual Books Books { get; set; }
         public virtual Employee Employee { get; set; }
