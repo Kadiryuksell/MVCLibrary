@@ -142,9 +142,13 @@
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\OperationController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
+    <Compile Include="Controllers\ShowcasePanelController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\About.cs">
+      <DependentUpon>LibraryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\Authors.cs">
       <DependentUpon>LibraryModel.tt</DependentUpon>
@@ -156,6 +160,10 @@
       <DependentUpon>LibraryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\Categories.cs">
+      <DependentUpon>LibraryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Class\TableModels.cs" />
+    <Compile Include="Models\Entity\Contact.cs">
       <DependentUpon>LibraryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\Employee.cs">
@@ -245,6 +253,60 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="ShowcaseTemplate\.gitignore" />
+    <Content Include="ShowcaseTemplate\css\freelancer.css" />
+    <Content Include="ShowcaseTemplate\css\freelancer.min.css" />
+    <Content Include="ShowcaseTemplate\gulpfile.js" />
+    <Content Include="ShowcaseTemplate\img\anna.jpeg" />
+    <Content Include="ShowcaseTemplate\img\avataaars.svg" />
+    <Content Include="ShowcaseTemplate\img\don.jpg" />
+    <Content Include="ShowcaseTemplate\img\fahre.jpeg" />
+    <Content Include="ShowcaseTemplate\img\fareler.jpeg" />
+    <Content Include="ShowcaseTemplate\img\kasagı.jpeg" />
+    <Content Include="ShowcaseTemplate\img\library.png" />
+    <Content Include="ShowcaseTemplate\img\library2.png" />
+    <Content Include="ShowcaseTemplate\img\portfolio\cabin.png" />
+    <Content Include="ShowcaseTemplate\img\portfolio\cake.png" />
+    <Content Include="ShowcaseTemplate\img\portfolio\circus.png" />
+    <Content Include="ShowcaseTemplate\img\portfolio\game.png" />
+    <Content Include="ShowcaseTemplate\img\portfolio\safe.png" />
+    <Content Include="ShowcaseTemplate\img\portfolio\submarine.png" />
+    <Content Include="ShowcaseTemplate\index.html" />
+    <Content Include="ShowcaseTemplate\js\contact_me.js" />
+    <Content Include="ShowcaseTemplate\js\contact_me.min.js" />
+    <Content Include="ShowcaseTemplate\js\freelancer.js" />
+    <Content Include="ShowcaseTemplate\js\freelancer.min.js" />
+    <Content Include="ShowcaseTemplate\js\jqBootstrapValidation.js" />
+    <Content Include="ShowcaseTemplate\js\jqBootstrapValidation.min.js" />
+    <Content Include="ShowcaseTemplate\mail\contact_me.php" />
+    <Content Include="ShowcaseTemplate\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="ShowcaseTemplate\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="ShowcaseTemplate\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="ShowcaseTemplate\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\css\all.css" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\css\all.min.css" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\css\brands.css" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\css\brands.min.css" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\css\fontawesome.css" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\css\fontawesome.min.css" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\css\regular.css" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\css\regular.min.css" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\css\solid.css" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\css\solid.min.css" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\css\svg-with-js.css" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\css\svg-with-js.min.css" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\css\v4-shims.css" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\css\v4-shims.min.css" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\webfonts\fa-brands-400.svg" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\webfonts\fa-regular-400.svg" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\webfonts\fa-solid-900.svg" />
+    <Content Include="ShowcaseTemplate\vendor\jquery-easing\jquery.easing.compatibility.js" />
+    <Content Include="ShowcaseTemplate\vendor\jquery-easing\jquery.easing.js" />
+    <Content Include="ShowcaseTemplate\vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="ShowcaseTemplate\vendor\jquery\jquery.js" />
+    <Content Include="ShowcaseTemplate\vendor\jquery\jquery.min.js" />
+    <Content Include="ShowcaseTemplate\vendor\jquery\jquery.slim.js" />
+    <Content Include="ShowcaseTemplate\vendor\jquery\jquery.slim.min.js" />
     <Content Include="style\AddAndBringStyle.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -276,6 +338,41 @@
     <Content Include="Views\LendBook\BorrowedBookList.cshtml" />
     <Content Include="Views\LendBook\BorrowedLendBookBring.cshtml" />
     <Content Include="Views\Operation\OperationList.cshtml" />
+    <Content Include="ShowcaseTemplate\.browserslistrc" />
+    <Content Include="ShowcaseTemplate\.travis.yml" />
+    <Content Include="ShowcaseTemplate\LICENSE" />
+    <Content Include="ShowcaseTemplate\package-lock.json" />
+    <Content Include="ShowcaseTemplate\package.json" />
+    <Content Include="ShowcaseTemplate\README.md" />
+    <Content Include="ShowcaseTemplate\scss\base\_page.scss" />
+    <Content Include="ShowcaseTemplate\scss\base\_variables.scss" />
+    <Content Include="ShowcaseTemplate\scss\components\_buttons.scss" />
+    <Content Include="ShowcaseTemplate\scss\components\_divider.scss" />
+    <Content Include="ShowcaseTemplate\scss\freelancer.scss" />
+    <Content Include="ShowcaseTemplate\scss\layout\_contact.scss" />
+    <Content Include="ShowcaseTemplate\scss\layout\_footer.scss" />
+    <Content Include="ShowcaseTemplate\scss\layout\_masthead.scss" />
+    <Content Include="ShowcaseTemplate\scss\layout\_navbar.scss" />
+    <Content Include="ShowcaseTemplate\scss\layout\_portfolio.scss" />
+    <Content Include="ShowcaseTemplate\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="ShowcaseTemplate\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="ShowcaseTemplate\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="ShowcaseTemplate\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\webfonts\fa-brands-400.eot" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\webfonts\fa-brands-400.ttf" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\webfonts\fa-brands-400.woff" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\webfonts\fa-brands-400.woff2" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\webfonts\fa-regular-400.eot" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\webfonts\fa-regular-400.ttf" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\webfonts\fa-regular-400.woff" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\webfonts\fa-regular-400.woff2" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\webfonts\fa-solid-900.eot" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\webfonts\fa-solid-900.ttf" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\webfonts\fa-solid-900.woff" />
+    <Content Include="ShowcaseTemplate\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
+    <Content Include="ShowcaseTemplate\vendor\jquery\jquery.min.map" />
+    <Content Include="ShowcaseTemplate\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Views\ShowcasePanel\ShowcasePanel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

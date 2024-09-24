@@ -34,5 +34,7 @@ namespace MVCLibrary.Models.Entity
         public virtual DbSet<Penalties> Penalties { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<About> About { get; set; }
+        public virtual DbSet<Contact> Contact { get; set; }
     }
 }
