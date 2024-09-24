@@ -28,6 +28,7 @@ namespace MVCLibrary.Models.Entity
         public string PublisherCompany { get; set; }
         public string PageCount { get; set; }
         public Nullable<bool> State { get; set; }
+        public string Photo { get; set; }
     
         public virtual Authors Authors { get; set; }
         public virtual Categories Categories { get; set; }
