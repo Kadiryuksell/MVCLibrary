@@ -137,6 +137,7 @@
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\LendBookController.cs" />
     <Compile Include="Controllers\MainController.cs" />
@@ -235,6 +236,46 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="DashboardTemplate\css\bootstrap.css" />
+    <Content Include="DashboardTemplate\css\clndr.css" />
+    <Content Include="DashboardTemplate\css\jqvmap.css" />
+    <Content Include="DashboardTemplate\css\nav.css" />
+    <Content Include="DashboardTemplate\css\style.css" />
+    <Content Include="DashboardTemplate\images\ar2.png" />
+    <Content Include="DashboardTemplate\images\arrows.png" />
+    <Content Include="DashboardTemplate\images\avatar.jpg" />
+    <Content Include="DashboardTemplate\images\avatar1.jpg" />
+    <Content Include="DashboardTemplate\images\avatar2.jpg" />
+    <Content Include="DashboardTemplate\images\img-sprite.png" />
+    <Content Include="DashboardTemplate\images\into.png" />
+    <Content Include="DashboardTemplate\images\into1.png" />
+    <Content Include="DashboardTemplate\images\logo.png" />
+    <Content Include="DashboardTemplate\images\pp.jpg" />
+    <Content Include="DashboardTemplate\images\pp0.jpg" />
+    <Content Include="DashboardTemplate\images\pp01.jpg" />
+    <Content Include="DashboardTemplate\images\settings.png" />
+    <Content Include="DashboardTemplate\images\tick-mark.png" />
+    <Content Include="DashboardTemplate\index.html" />
+    <Content Include="DashboardTemplate\js\Chart1.js" />
+    <Content Include="DashboardTemplate\js\clndr.js" />
+    <Content Include="DashboardTemplate\js\easyResponsiveTabs.js" />
+    <Content Include="DashboardTemplate\js\jquery.easydropdown.js" />
+    <Content Include="DashboardTemplate\js\jquery.min.js" />
+    <Content Include="DashboardTemplate\js\jquery.nicescroll.js" />
+    <Content Include="DashboardTemplate\js\jquery.vmap.js" />
+    <Content Include="DashboardTemplate\js\jquery.vmap.sampledata.js" />
+    <Content Include="DashboardTemplate\js\jquery.vmap.world.js" />
+    <Content Include="DashboardTemplate\js\main.js" />
+    <Content Include="DashboardTemplate\js\moment-2.2.1.js" />
+    <Content Include="DashboardTemplate\js\site.js" />
+    <Content Include="DashboardTemplate\js\underscore-min.js" />
+    <Content Include="DashboardTemplate\resimler\book1.jpg" />
+    <Content Include="DashboardTemplate\resimler\book2.jpg" />
+    <Content Include="DashboardTemplate\resimler\book3.jpg" />
+    <Content Include="DashboardTemplate\resimler\book4.jpg" />
+    <Content Include="DashboardTemplate\resimler\book5.jpg" />
+    <Content Include="DashboardTemplate\resimler\img1.jpg" />
+    <Content Include="DashboardTemplate\w3layouts-License.txt" />
     <EntityDeploy Include="Models\Entity\LibraryModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>LibraryModel.Designer.cs</LastGenOutput>
@@ -373,6 +414,7 @@
     <Content Include="ShowcaseTemplate\vendor\jquery\jquery.min.map" />
     <Content Include="ShowcaseTemplate\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\ShowcasePanel\ShowcasePanel.cshtml" />
+    <Content Include="Views\Dashboard\DashboardPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
