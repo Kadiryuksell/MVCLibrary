@@ -6,8 +6,6 @@
 
 <link href="~/style/AddAndBringStyle.css" rel="stylesheet" />
 
-<h1">Borrowed Lend Book Update</h1">
-
 @using (Html.BeginForm("BorrowedLendBookUpdate", "LendBook", FormMethod.Post))
 {
     <div class="container">
@@ -37,6 +35,12 @@
 
             <label>The Date the Member Brought</label>
             <input type="text" class="form-control" name="DateMemberBrought" value="@DateTime.Now.ToShortDateString()" />
+            
+
+            <label>
+                Number of days late
+            </label>
+            <input type="text" class="form-control"  id="lateDay" value="@ViewBag.dateValue" readonly/>
 
         </div>
     </div>

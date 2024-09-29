@@ -30,7 +30,7 @@ namespace MVCLibrary.Controllers
                 db.Authors.Add(author);
                 db.SaveChanges();
 
-                return RedirectToAction("AuthorAdd");
+                return RedirectToAction("AuthorList");
             }
             
             return View();

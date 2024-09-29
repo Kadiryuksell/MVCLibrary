@@ -11,7 +11,8 @@ namespace MVCLibrary.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Authors
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +22,10 @@ namespace MVCLibrary.Models.Entity
         }
     
         public int Id { get; set; }
+        [Required(ErrorMessage = "Author name cannot be empty.")]
         public string Name { get; set; }
+        [StringLength(20,ErrorMessage = "Surname cannot be longer than 20 characters.")]
+        [MinLength(3,ErrorMessage = "Surname cannot be shorter than 3 characters")]
         public string LastName { get; set; }
         public string Detail { get; set; }
     

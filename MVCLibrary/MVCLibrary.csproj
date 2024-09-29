@@ -230,6 +230,10 @@
       <DependentUpon>LibraryModel.edmx</DependentUpon>
       <LastGenOutput>LibraryModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Pictures\k1.jpeg" />
+    <Content Include="Pictures\k2.jpeg" />
+    <Content Include="Pictures\k3.jpeg" />
+    <Content Include="Pictures\k4.jpeg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -415,6 +419,7 @@
     <Content Include="ShowcaseTemplate\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\ShowcasePanel\ShowcasePanel.cshtml" />
     <Content Include="Views\Dashboard\DashboardPage.cshtml" />
+    <Content Include="Views\Dashboard\Gallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
