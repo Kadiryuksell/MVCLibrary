@@ -11,10 +11,16 @@
 <form class="form-group" method="post">
     <div class="container">
         <div class="left-side">
-            <label>Name</label>
-            @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
-            <label>Last Name</label>
-            @Html.TextBoxFor(p => p.LastName, new { @class = "form-control" })
+            <div>
+                <label>Name</label>
+                @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Name)
+            </div>
+            <div>
+                <label>Last Name</label>
+                @Html.TextBoxFor(p => p.LastName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.LastName)
+            </div>
 
         </div>
 

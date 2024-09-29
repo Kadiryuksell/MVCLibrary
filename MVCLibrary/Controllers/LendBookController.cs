@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Description;
 using System.Web.UI.WebControls;
 
 namespace MVCLibrary.Controllers
@@ -80,14 +81,19 @@ namespace MVCLibrary.Controllers
             return RedirectToAction("BorrowedBookList");
         }
 
-        public ActionResult BorrowedLendBookBring(int id) 
+        public ActionResult BorrowedLendBookBring(LibraryOperations operation) 
         {
             ViewBag.userValues = UserValues();
             ViewBag.employeeValues = EmployeeValues();
             ViewBag.bookValues = BookValues();
 
-            var operationsId = Db.LibraryOperations.Find(id);
+            var operationsId = Db.LibraryOperations.Find(operation.Id);
 
+            DateTime dateStart = DateTime.Parse(operationsId.ReturnDate.ToString());
+            DateTime dateEnd = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            TimeSpan dateDifference =  dateEnd - dateStart;
+            
+            ViewBag.dateValue = dateDifference.TotalDays;
             return View("BorrowedLendBookBring", operationsId);
         }
 

@@ -27,7 +27,7 @@
             <td>@(operation.Employee != null ? operation.Employee.Name + " " + operation.Employee.LastName : "No Employee")</td>
             <td>@Convert.ToDateTime(operation.PurchaseDate).ToShortDateString()</td>
             <td>@Convert.ToDateTime(operation.ReturnDate).ToShortDateString()</td>
-            <td><a href="/Lendbook/BorrowedLendBookBring/@operation.Id" class="btn btn-success">Return</a></td>
+            <td><a href="/Lendbook/BorrowedLendBookBring/@operation.Id" class="btn btn-success">Return the Book</a></td>
         </tr>
 
     }
