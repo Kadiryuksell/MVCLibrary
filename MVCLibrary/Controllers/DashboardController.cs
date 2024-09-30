@@ -11,9 +11,30 @@ namespace MVCLibrary.Controllers
     public class DashboardController : Controller
     {
         // GET: Dashboard
-        
+        LibraryEntities db = new LibraryEntities();
+
+        private int userCount()
+        {
+            return db.Users.Count();
+        }
+
+        private decimal? penaltiesCount()
+        {
+            return db.Penalties.Sum(p => p.Money);
+        }
+
+        private int booksCount()
+        {
+            return db.Books.Count();
+        }
         public ActionResult DashboardPage()
         {
+            var borrowedBooks = db.Books.Where(p => p.State == false).Count();
+         
+            ViewBag.Users = userCount();
+            ViewBag.Books = booksCount();
+            ViewBag.Penalties = penaltiesCount();
+            ViewBag.brwdBook = borrowedBooks;
             return View();
         }
 
