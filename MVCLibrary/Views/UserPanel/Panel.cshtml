@@ -1,7 +1,96 @@
-﻿
+﻿@model MVCLibrary.Models.Entity.Users
 @{
     ViewBag.Title = "Panel";
     Layout = "~/Views/Shared/_LayoutPanel.cshtml";
 }
 
+<style>
+    h1{
+        text-align:center;
+    }
+    label {
+        font-weight: bold;
+    }
+</style>
+
+<h1>library Member Information</h1>
+
+@using (Html.BeginForm("PanelUpdate", "UserPanel", FormMethod.Post))
+{
+    <table class="table table-hover" style="margin-top: 20px 0;">
+
+        <tr>
+            <td>
+                <label>Student No:</label> @Html.TextBoxFor(p => p.Id, new { @class = "form-control", @readonly = "readonly" })
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Name:</label>
+                @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Name, "", new { @style = "color:red" })
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Last Name:</label>
+                @Html.TextBoxFor(p => p.LastName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.LastName, "", new { @style = "color:red" })
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>User Name:</label>
+                @Html.TextBoxFor(p => p.UserName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.UserName, "", new { @style = "color:red" })
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Phone Number:</label>  @Html.TextBoxFor(p => p.PhoneNumber, new { @class = "form-control" })
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>School:</label> @Html.TextBoxFor(p => p.School, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Photo:</label>
+                @Html.TextBoxFor(p => p.Photo, new { @class = "form-control" })
+               
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Email Address:</label>
+                @Html.TextBoxFor(p => p.Mail, new { @class = "form-control", @readonly = "readonly" })
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Password:</label>
+                @Html.TextBoxFor(p => p.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Password, "", new { @style = "color:red" })
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <button class="btn btn-warning">Update</button>
+            </td>
+        </tr>
+    </table>
+
+
+    
+}
 

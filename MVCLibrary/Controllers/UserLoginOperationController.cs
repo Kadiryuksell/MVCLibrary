@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MVCLibrary.Models.Entity;
+using System.Web.Security;
 
 namespace MVCLibrary.Controllers
 {
@@ -15,6 +16,22 @@ namespace MVCLibrary.Controllers
         {
 
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(Users user)
+        {
+            var userInfo = db.Users.FirstOrDefault(p => p.Mail == user.Mail && p.Password == user.Password);
+            
+            if(userInfo == null)
+            {
+                return View();
+            }
+
+            FormsAuthentication.SetAuthCookie(userInfo.Mail, false);
+            Session["email"] = userInfo.Mail.ToString();
+
+            return RedirectToAction("Panel", "UserPanel");
         }
 
         [HttpGet]
