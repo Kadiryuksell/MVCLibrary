@@ -1,0 +1,25 @@
+﻿@using MVCLibrary.Models.Entity
+@model List<LibraryOperations>
+@{
+    ViewBag.Title = "MyBooks";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Book Name</th>
+        <th>Date of Lending</th>
+        <th>Return The Book</th>
+    </tr>
+
+    @foreach (var operation in Model)
+    {
+        <tr>
+            <td>@(operation.Books != null ? operation.Books.Name : "No Book")</td>
+            <td>@Convert.ToDateTime(operation.PurchaseDate).ToShortDateString()</td>
+            <td>@Convert.ToDateTime(operation.DateMemberBrought).ToShortDateString()</td>
+        </tr>
+
+    }
+</table>
+

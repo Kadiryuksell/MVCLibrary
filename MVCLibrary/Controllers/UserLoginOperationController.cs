@@ -30,6 +30,7 @@ namespace MVCLibrary.Controllers
 
             FormsAuthentication.SetAuthCookie(userInfo.Mail, false);
             Session["email"] = userInfo.Mail.ToString();
+            Session["fullName"] = userInfo.Name + " " + userInfo.LastName;
 
             return RedirectToAction("Panel", "UserPanel");
         }

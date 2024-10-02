@@ -30,13 +30,13 @@
 
         <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading">Full Name </div>
+            <div class="sidebar-heading">@Session["fullName"]</div>
             <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item list-group-item-action bg-light">Profil </a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">Message</a>
+                <a href="/UserPanel/Panel" class="list-group-item list-group-item-action bg-light">Profil </a>
+                <a href="/Message/MessagePage" class="list-group-item list-group-item-action bg-light">Message</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light">Announcements</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">My Books</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">Showcase</a>
+                <a href="/UserPanel/MyBooks/" class="list-group-item list-group-item-action bg-light">My Books</a>
+                <a href="/ShowcasePanel/ShowcasePanel/" class="list-group-item list-group-item-action bg-light">Showcase</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light">Help</a>
             </div>
         </div>
@@ -54,7 +54,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/ShowcasePanel/ShowcasePanel/#about">About <span class="sr-only">(current)</span></a>
                         </li>
  
                         <li class="nav-item dropdown">
@@ -62,7 +62,7 @@
                                 Settings
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">My Account</a>
+                                <a class="dropdown-item" href="/UserPanel/Panel">My Account</a>
                                 <a class="dropdown-item" href="#">Exit</a>
                                 <div class="dropdown-divider"></div>
       

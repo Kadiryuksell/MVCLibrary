@@ -1,0 +1,30 @@
+﻿@using MVCLibrary.Models.Entity
+@model List<Message>
+@{
+    ViewBag.Title = "MessagePage";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<h2>Incoming Message</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Sender</th>
+        <th>Subject</th>
+        <th>Message</th>
+        <th>Date</th>
+    </tr>
+    @foreach(var msg in Model)
+            {
+                <tr>
+                    <td>@msg.Sender</td>
+                    <td>@msg.Subject</td>
+                    <td>@msg.Content</td>
+                    <td>@msg.Date</td>
+                </tr>
+            }
+</table>
+
+<a class="btn btn-primary" href="/Message/NewMessage">New Message Send</a>
+<a class="btn btn-primary" style="margin-left:20px;" href="/Message/SentMessages">Sent Messages Show</a>
+
