@@ -10,7 +10,8 @@ namespace MVCLibrary.Controllers
     public class UserPanelController : Controller
     {
         // GET: UserPanel
-        LibraryEntities db = new LibraryEntities(); 
+        LibraryEntities db = new LibraryEntities();
+
         [Authorize]
         public ActionResult Panel()
         {
@@ -38,6 +39,15 @@ namespace MVCLibrary.Controllers
             user.Photo = userUpdate.Photo;
             db.SaveChanges();
             return RedirectToAction("Panel");
+        }
+
+        public ActionResult MyBooks()
+        {
+            var userMail = (string)Session["email"];
+            var userId = db.Users.Where(p=>p.Mail == userMail.ToString()).Select(x =>x.Id).FirstOrDefault();
+            var values = db.LibraryOperations.Where(p =>p.UserId == userId).ToList();
+
+            return View(values);
         }
     }
 }

@@ -1,0 +1,32 @@
+﻿@model MVCLibrary.Models.Entity.Message
+@{
+    ViewBag.Title = "NewMessage";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<link href="~/style/AddAndBringStyle.css" rel="stylesheet" />
+<h2>New Message</h2>
+
+<form class="form-group" method="post">
+    <div class="container">
+        <div class="left-side">
+            <label>Recipient Mail</label>
+            @Html.DropDownListFor(p => p.Recipient, (List<SelectListItem>)ViewBag.userMail, new { @class = "form-control" })
+
+            <label>Subject</label>
+            @Html.TextBoxFor(p => p.Subject, new { @class = "form-control" })
+        </div>
+
+
+        <div class="right-side">
+            <label>Content</label>
+            @Html.TextAreaFor(p => p.Content, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <button class="btn btn-primary">Send</button>
+
+</form>
+
+
+

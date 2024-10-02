@@ -11,8 +11,7 @@ namespace MVCLibrary.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Users
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,24 +22,10 @@ namespace MVCLibrary.Models.Entity
         }
     
         public int Id { get; set; }
-        [Required(ErrorMessage = "Name is required")]
-        [MinLength(2, ErrorMessage = "Name must be at least 2 characters long")]
-        [MaxLength(50, ErrorMessage = "Name cannot exceed 50 characters")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Last Name is required")]
-        [MinLength(2, ErrorMessage = "Last Name must be at least 2 characters long")]
-        [MaxLength(50, ErrorMessage = "Last Name cannot exceed 50 characters")]
         public string LastName { get; set; }
-        [Required(ErrorMessage = "Email is required")]
-        [EmailAddress(ErrorMessage = "Invalid email format")]
         public string Mail { get; set; }
-        [Required(ErrorMessage = "Username is required")]
-        [MinLength(4, ErrorMessage = "Username must be at least 4 characters long")]
-        [MaxLength(20, ErrorMessage = "Username cannot exceed 20 characters")]
         public string UserName { get; set; }
-        [Required(ErrorMessage = "Password is required")]
-        [MinLength(4, ErrorMessage = "Password must be at least 4 characters long")]
-        [MaxLength(16, ErrorMessage = "Password cannot exceed 16 characters")]
         public string Password { get; set; }
         public string Photo { get; set; }
         public string PhoneNumber { get; set; }

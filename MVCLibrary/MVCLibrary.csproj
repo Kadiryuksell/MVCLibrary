@@ -141,6 +141,7 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\LendBookController.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\OperationController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\ShowcasePanelController.cs" />
@@ -188,6 +189,9 @@
       <DependentUpon>LibraryModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\LibraryOperations.cs">
+      <DependentUpon>LibraryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Message.cs">
       <DependentUpon>LibraryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\Penalties.cs">
@@ -494,6 +498,10 @@
     <Content Include="webpanel\vendor\jquery\jquery.min.map" />
     <Content Include="webpanel\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\UserPanel\Panel.cshtml" />
+    <Content Include="Views\Message\MessagePage.cshtml" />
+    <Content Include="Views\Message\NewMessage.cshtml" />
+    <Content Include="Views\Message\SentMessages.cshtml" />
+    <Content Include="Views\UserPanel\MyBooks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

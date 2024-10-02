@@ -23,6 +23,7 @@
         <AssociationConnector Association="LibraryDbModel.FK_Penalties_Users" ManuallyRouted="false" />
         <EntityTypeShape EntityType="LibraryDbModel.About" Width="1.5" PointX="7.375" PointY="0.75" />
         <EntityTypeShape EntityType="LibraryDbModel.Contact" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="LibraryDbModel.Message" Width="1.5" PointX="7.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
