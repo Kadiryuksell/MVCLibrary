@@ -1,0 +1,28 @@
+﻿@using MVCLibrary.Models.Entity
+@model List<Announcement>
+@{
+    ViewBag.Title = "AnnouncementList";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<h2>Announcements</h2>
+
+<table class="table table-responsive-xxl table-bordered table-hover">
+    <tr>
+        <th>Category</th>
+        <th>Date</th>
+        <th>Detail</th>
+    </tr>
+    @foreach (var announcement in Model)
+    {
+        <tr>
+            <td>@announcement.Content </td>
+            <td>@Convert.ToDateTime(announcement.Date).ToShortDateString() </td>
+            <td>@announcement.Content</td>
+        </tr>
+
+    }
+</table>
+
+
+

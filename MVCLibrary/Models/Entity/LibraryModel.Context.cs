@@ -37,5 +37,6 @@ namespace MVCLibrary.Models.Entity
         public virtual DbSet<About> About { get; set; }
         public virtual DbSet<Contact> Contact { get; set; }
         public virtual DbSet<Message> Message { get; set; }
+        public virtual DbSet<Announcement> Announcement { get; set; }
     }
 }

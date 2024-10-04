@@ -134,6 +134,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
@@ -152,6 +153,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\About.cs">
+      <DependentUpon>LibraryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Announcement.cs">
       <DependentUpon>LibraryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\Authors.cs">
@@ -503,6 +507,10 @@
     <Content Include="Views\Message\SentMessages.cshtml" />
     <Content Include="Views\UserPanel\MyBooks.cshtml" />
     <Content Include="Views\User\UserBookHistory.cshtml" />
+    <Content Include="Views\Announcement\AnnouncementList.cshtml" />
+    <Content Include="Views\Announcement\AnnouncementAdd.cshtml" />
+    <Content Include="Views\Announcement\AnnouncementBring.cshtml" />
+    <Content Include="Views\UserPanel\AnnouncementList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

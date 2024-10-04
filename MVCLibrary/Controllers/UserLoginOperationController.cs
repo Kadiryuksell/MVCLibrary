@@ -10,7 +10,7 @@ namespace MVCLibrary.Controllers
 {
     public class UserLoginOperationController : Controller
     {
-        // GET: UserLogin
+        // GET: UserLoginOperation
         LibraryEntities db = new LibraryEntities();
         public ActionResult Login()
         {
@@ -30,6 +30,7 @@ namespace MVCLibrary.Controllers
 
             FormsAuthentication.SetAuthCookie(userInfo.Mail, false);
             Session["email"] = userInfo.Mail.ToString();
+            Session["photo"] = userInfo.Photo;
             Session["fullName"] = userInfo.Name + " " + userInfo.LastName;
 
             return RedirectToAction("Panel", "UserPanel");

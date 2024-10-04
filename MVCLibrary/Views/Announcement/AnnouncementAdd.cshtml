@@ -1,0 +1,37 @@
+﻿@model MVCLibrary.Models.Entity.Announcement
+@{
+    ViewBag.Title = "AnnouncementAdd";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<link href="~/style/AddAndBringStyle.css" rel="stylesheet" />
+<h2>Announcement Add</h2>
+
+
+<form class="form-group" method="post">
+    <div class="container">
+        <div class="left-side">
+
+            <div>
+                <label>Category</label>
+                @Html.TextBoxFor(p => p.Category, new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>Date</label>
+                @Html.TextBoxFor(p => p.Date, new { @class = "form-control", type ="date"})
+            </div>
+
+        </div>
+        <div class="right-side">
+            <div>
+                <label>Content</label>
+                @Html.TextAreaFor(p => p.Content, new { @class = "form-control" })
+            </div>
+
+        </div>
+    </div>
+
+    <button style="width:150px" class="btn btn-primary">Announcement Add</button>
+
+</form>

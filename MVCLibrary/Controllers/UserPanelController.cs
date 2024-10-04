@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using MVCLibrary.Models.Entity;
 
 namespace MVCLibrary.Controllers
@@ -48,6 +49,18 @@ namespace MVCLibrary.Controllers
             var values = db.LibraryOperations.Where(p =>p.UserId == userId).ToList();
 
             return View(values);
+        }
+
+        public ActionResult AnnouncementList()
+        {
+            var announcements = db.Announcement.ToList();
+            return View(announcements);
+        }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login", "UserLoginOperation");
         }
     }
 }
