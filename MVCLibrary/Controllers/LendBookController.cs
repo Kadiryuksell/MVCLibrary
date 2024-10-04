@@ -37,13 +37,29 @@ namespace MVCLibrary.Controllers
 
             return employeeValues;
         }
-        private List<SelectListItem> BookValues()
+        private List<SelectListItem> BookValues(bool bookVote)
         {
-            List<SelectListItem> bookValues = Db.Books.Select(book => new SelectListItem
+            List<SelectListItem> bookValues;
+            if (bookVote)
             {
-                Text = book.Name,
-                Value = book.Id.ToString()
-            }).ToList();
+                 bookValues = Db.Books
+                .Where(p => p.State == true)
+                .Select(book => new SelectListItem
+                {
+                    Text = book.Name,
+                    Value = book.Id.ToString()
+                }).ToList();
+            }
+            else
+            {
+                 bookValues = Db.Books
+                .Select(book => new SelectListItem
+                {
+                    Text = book.Name,
+                    Value = book.Id.ToString()
+                }).ToList();
+            }
+            
 
             return bookValues;
         }
@@ -59,7 +75,7 @@ namespace MVCLibrary.Controllers
         {
             ViewBag.userValues = UserValues();
             ViewBag.employeeValues = EmployeeValues();
-            ViewBag.bookValues = BookValues();
+            ViewBag.bookValues = BookValues(true);
 
             return View();
         }
@@ -71,6 +87,7 @@ namespace MVCLibrary.Controllers
                 var employeeId = Db.Employee.Where(p => p.Id == libraryOperation.Employee.Id).FirstOrDefault();
                 var bookId = Db.Books.Where(p => p.Id == libraryOperation.Books.Id).FirstOrDefault();
 
+            bookId.State = false;
             libraryOperation.Books = bookId;
             libraryOperation.Employee = employeeId;
             libraryOperation.Users = userId;
@@ -85,7 +102,7 @@ namespace MVCLibrary.Controllers
         {
             ViewBag.userValues = UserValues();
             ViewBag.employeeValues = EmployeeValues();
-            ViewBag.bookValues = BookValues();
+            ViewBag.bookValues = BookValues(false);
 
             var operationsId = Db.LibraryOperations.Find(operation.Id);
 
@@ -104,11 +121,13 @@ namespace MVCLibrary.Controllers
             var employeeId = Db.Employee.Where(p => p.Id == operation.Employee.Id).FirstOrDefault();
             var operationId = Db.LibraryOperations.Find(operation.Id);
 
+            bookId.State = true;
             operationId.BookId = bookId.Id;
             operationId.EmployeeId = employeeId.Id;
             operationId.UserId = userId.Id;
             operationId.OperationState = true;
             operationId.DateMemberBrought = operation.DateMemberBrought;
+
             Db.SaveChanges();
             return RedirectToAction("BorrowedBookList");
         }

@@ -10,14 +10,15 @@
 
 <h2>Author operation</h2>
 
-<table class="table table-striped">
+<table class="table table-hover">
     <tr style="background-color:rgb(252,178,22)">
         <th>ID</th>
         <th>Name</th>
         <th>Last Name</th>
         <th>Detail</th>
+        <th>State</th>
         <th>Update</th>
-        <th>Delete</th>
+        <th>Change to State</th>
     </tr>
     @foreach (var author in Model)
     {
@@ -25,9 +26,13 @@
             <td>@author.Id</td>
             <td>@author.Name</td>
             <td>@author.LastName</td>
-            <td>@author.Detail</td>
+            <td>@(author.Detail.Length > 50 ? author.Detail.Substring(0, 50) + "..." : author.Detail)</td>
+            <td>@author.State</td>
             <td><a href="/Author/AuthorBring/@author.Id" class="btn btn-success">Update</a></td>
-            <td>@Html.ActionLink("Delete", "AuthorDelete", new { id = author.Id }, new { @class = "btn btn-danger", @onclick = $"return confirm('Do you want to delete {author.Name + " "+author.LastName} ?');" })</td>
+            <td>
+                <a href="/Author/AuthorSelectActive/@author.Id" class="btn btn-warning">Active</a>
+                <a href="/Author/AuthorSelectPassive/@author.Id" class="btn btn-danger">Passive</a>
+            </td>
 
         </tr>
 

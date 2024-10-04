@@ -13,29 +13,23 @@
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
-        <th>user Name</th>
         <th>Name</th>
         <th>Last Name</th>
-        <th>Mail</th>
-        <th>Password</th>
-        <th>Phone Number</th>
         <th>School</th>
         <th>Update</th>
         <th>Delete</th>
+        <th>Member Book History</th>
     </tr>
     @foreach (var user in Model)
     {
         <tr>
             <td>@user.Id</td>
-            <td>@user.UserName</td>
             <td>@user.Name </td>
             <td>@user.LastName </td>
-            <td>@user.Mail </td>
-            <td>@user.Password</td>
-            <td>@user.PhoneNumber</td>
             <td>@user.School</td>
             <td><a href="/User/UserBring/@user.Id" class="btn btn-success">Update</a></td>
             <td><a href="/User/UserDelete/@user.Id" class="btn btn-danger">Delete</a></td>
+            <td><a href="/User/UserBookHistory/@user.Id" style="background-color:lightseagreen" class="btn btn-success">Book History</a></td>
 
         </tr>
 

@@ -22,6 +22,7 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="LastName" Type="varchar" MaxLength="50" />
           <Property Name="Detail" Type="varchar(max)" />
+          <Property Name="State" Type="bit" />
         </EntityType>
         <EntityType Name="Books">
           <Key>
@@ -51,6 +52,7 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="30" />
+          <Property Name="State" Type="bit" />
         </EntityType>
         <EntityType Name="Contact">
           <Key>
@@ -273,6 +275,7 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Books" Relationship="Self.FK_Books_Authors" FromRole="Authors" ToRole="Books" />
+          <Property Name="State" Type="Boolean" />
         </EntityType>
         <EntityType Name="Books">
           <Key>
@@ -306,6 +309,7 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Books" Relationship="Self.FK_Books_Categories" FromRole="Categories" ToRole="Books" />
+          <Property Name="State" Type="Boolean" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -535,6 +539,7 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           <EntitySetMapping Name="Authors">
             <EntityTypeMapping TypeName="LibraryDbModel.Authors">
               <MappingFragment StoreEntitySet="Authors">
+                <ScalarProperty Name="State" ColumnName="State" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -569,6 +574,7 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="LibraryDbModel.Categories">
               <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="State" ColumnName="State" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>

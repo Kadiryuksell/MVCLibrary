@@ -502,6 +502,7 @@
     <Content Include="Views\Message\NewMessage.cshtml" />
     <Content Include="Views\Message\SentMessages.cshtml" />
     <Content Include="Views\UserPanel\MyBooks.cshtml" />
+    <Content Include="Views\User\UserBookHistory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
