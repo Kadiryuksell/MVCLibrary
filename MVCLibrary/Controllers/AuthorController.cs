@@ -36,17 +36,20 @@ namespace MVCLibrary.Controllers
             return View();
         }
 
-        public ActionResult AuthorDelete(int id)
+        public ActionResult AuthorSelectPassive(int id)
         {
-            if(id != 0)
-            {
+            var authorId = db.Authors.Find(id);
+            authorId.State = false;
+            db.SaveChanges();
+            return RedirectToAction("AuthorList");
+        }
+
+        public ActionResult AuthorSelectActive(int id)
+        {
                 var authorId = db.Authors.Find(id);
-                db.Authors.Remove(authorId);
+                authorId.State = true;
                 db.SaveChanges();
                 return RedirectToAction("AuthorList");
-            }
-
-            return RedirectToAction("AuthorList");
         }
 
         public ActionResult AuthorBring(int id) 

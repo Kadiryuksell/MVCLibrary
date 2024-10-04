@@ -29,10 +29,18 @@ namespace MVCLibrary.Controllers
           return RedirectToAction("CategoryList");
         }
 
-        public ActionResult CategoryDelete(int id) 
+        public ActionResult CategorySelectActive(int id) 
         {
             var categoryId = db.Categories.FirstOrDefault(c => c.Id == id);
-            db.Categories.Remove(categoryId);   
+            categoryId.State = true;
+            db.SaveChanges();
+            return RedirectToAction("CategoryList");
+        }
+
+        public ActionResult CategorySelectPassive(int id)
+        {
+            var categoryId = db.Categories.FirstOrDefault(c => c.Id == id);
+            categoryId.State = false;
             db.SaveChanges();
             return RedirectToAction("CategoryList");
         }

@@ -20,7 +20,8 @@ namespace MVCLibrary.Controllers
 
         private List<SelectListItem> CategoryValues()
         {
-            List<SelectListItem> categoryValues = db.Categories
+            List<SelectListItem> categoryValues = db.Categories.
+                        Where(p => p.State == true)
                        .Select(category => new SelectListItem
                        {
                            Text = category.Name,
@@ -33,6 +34,7 @@ namespace MVCLibrary.Controllers
         private List<SelectListItem> AuthorValues()
         {
             List<SelectListItem> authorValues = db.Authors
+                    .Where(p => p.State == true)
                     .Select(author => new SelectListItem
                     {
                         Text = author.Name + " " + author.LastName,

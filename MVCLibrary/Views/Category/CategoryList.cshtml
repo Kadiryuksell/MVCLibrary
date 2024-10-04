@@ -12,16 +12,20 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
+        <th>State</th>
         <th>Update</th>
-        <th>Delete</th>
+        <th>Change to State</th>
     </tr>
     @foreach(var category in Model)
      {
         <tr>
             <td>@category.Id</td>
             <td>@category.Name</td>
+            <td>@category.State</td>
             <td><a href="/Category/CategoryBring/@category.Id" class="btn btn-success">Update</a></td>
-            <td><a href="/Category/CategoryDelete/@category.Id" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Category/CategorySelectActive/@category.Id" class="btn btn-warning">Active</a>
+                <a href="/Category/CategorySelectPassive/@category.Id" class="btn btn-danger">Passive</a>
+            </td>
 
         </tr>       
      }

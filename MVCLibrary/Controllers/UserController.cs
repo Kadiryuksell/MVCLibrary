@@ -66,5 +66,11 @@ namespace MVCLibrary.Controllers
             return RedirectToAction("UserList");
         }
 
+        public ActionResult UserBookHistory(int id)
+        {
+            var book = db.LibraryOperations.Where(p => p.UserId == id).ToList();
+            return View(book);
+        }
+
     }
 }
