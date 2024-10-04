@@ -1,0 +1,47 @@
+﻿@model MVCLibrary.Models.Entity.Announcement
+@{
+    ViewBag.Title = "AnnouncementBring";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<link href="~/style/AddAndBringStyle.css" rel="stylesheet" />
+<h2>Announcement Update</h2>
+
+
+@using (Html.BeginForm("AnnouncementUpdate", "Announcement", FormMethod.Post))
+{
+    <div class="container">
+        <div class="left-side">
+
+            <div>
+                <label>ID</label>
+                @Html.TextBoxFor(p => p.Id, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+
+            <div>
+                <label>Category</label>
+                @Html.TextBoxFor(p => p.Category, new { @class = "form-control" })
+            </div>
+
+        </div>
+        <div class="right-side">
+            <div>
+                <label>Date</label>
+                @Html.TextBoxFor(p => p.Date, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+
+            </div>
+
+            <div>
+                <label>Content</label>
+                @Html.TextAreaFor(p => p.Content, new { @class = "form-control" })
+            </div>
+
+        </div>
+    </div>
+
+    <button style="width:180px" class="btn btn-primary">Announcement Update</button>
+}
+
+
+

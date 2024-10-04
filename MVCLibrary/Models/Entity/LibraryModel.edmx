@@ -14,6 +14,15 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LibraryAbout" Type="varchar(max)" />
         </EntityType>
+        <EntityType Name="Announcement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="50" />
+          <Property Name="Content" Type="varchar(max)" />
+          <Property Name="Date" Type="smalldatetime" />
+        </EntityType>
         <EntityType Name="Authors">
           <Key>
             <PropertyRef Name="Id" />
@@ -216,6 +225,7 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="LibraryDbModelStoreContainer">
+          <EntitySet Name="Announcement" EntityType="Self.Announcement" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CashRegister" EntityType="Self.CashRegister" Schema="dbo" store:Type="Tables" />
@@ -501,6 +511,7 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           <EntitySet Name="About" EntityType="LibraryDbModel.About" />
           <EntitySet Name="Contact" EntityType="LibraryDbModel.Contact" />
           <EntitySet Name="Message" EntityType="LibraryDbModel.Message" />
+          <EntitySet Name="Announcement" EntityType="LibraryDbModel.Announcement" />
         </EntityContainer>
         <EntityType Name="About">
           <Key>
@@ -528,6 +539,15 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           <Property Name="Recipient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Content" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Announcement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Date" Type="DateTime" Precision="0" />
         </EntityType>
       </Schema>
@@ -668,6 +688,16 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
                 <ScalarProperty Name="Subject" ColumnName="Subject" />
                 <ScalarProperty Name="Recipient" ColumnName="Recipient" />
                 <ScalarProperty Name="Sender" ColumnName="Sender" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Announcement">
+            <EntityTypeMapping TypeName="LibraryDbModel.Announcement">
+              <MappingFragment StoreEntitySet="Announcement">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
