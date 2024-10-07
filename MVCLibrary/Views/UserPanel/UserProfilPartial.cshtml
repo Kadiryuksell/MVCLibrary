@@ -1,0 +1,93 @@
+﻿@model MVCLibrary.Models.Entity.Users
+
+@using (Html.BeginForm("PanelUpdate", "UserPanel", FormMethod.Post))
+
+{
+
+    <form class="form-horizontal">
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Last Name</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">User Name</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Password</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Photo</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Photo, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">School</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.School, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <div class="offset-sm-2 col-sm-10">
+
+                <button type="submit" class="btn btn-danger">Update</button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+}

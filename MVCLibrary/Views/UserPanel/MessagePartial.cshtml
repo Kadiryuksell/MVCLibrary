@@ -1,0 +1,29 @@
+﻿@using MVCLibrary.Models.Entity
+@model List<Announcement>
+
+@foreach (var announcement in Model)
+{
+    <div class="post">
+
+        <div class="user-block">
+
+            <img class="img-circle img-bordered-sm" src="~/WebAdminLTE/dist/img/2.png" alt="user image">
+
+            <span class="username">
+
+                <a href="#">@announcement.Category</a>
+
+                <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+
+            </span>
+
+            <span class="description">@Convert.ToDateTime(announcement.Date).ToShortDateString()</span>
+
+        </div>
+
+        <p>
+            @announcement.Content
+        </p>
+
+    </div>
+}

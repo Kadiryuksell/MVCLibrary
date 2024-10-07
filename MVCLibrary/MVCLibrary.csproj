@@ -2600,6 +2600,8 @@
     <Content Include="WebAdminLTE\plugins\sweetalert2-theme-bootstrap-4\bootstrap-4.scss" />
     <Content Include="WebAdminLTE\plugins\toastr\toastr.js.map" />
     <Content Include="WebAdminLTE\README.md" />
+    <Content Include="Views\UserPanel\MessagePartial.cshtml" />
+    <Content Include="Views\UserPanel\UserProfilPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

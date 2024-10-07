@@ -19,7 +19,17 @@ namespace MVCLibrary.Controllers
         {
             var userMail = (string)Session["email"];
             var user = db.Users.FirstOrDefault( p=> p.Mail == userMail );
-            return View(user);
+            var announcements = db.Announcement.ToList();
+            ViewBag.userFullName = user.Name +" " +user.LastName;
+            ViewBag.userPhoto = user.Photo;
+            ViewBag.userName = user.UserName;
+            ViewBag.userPhone = user.PhoneNumber;
+            ViewBag.School = user.School;
+            ViewBag.totalUserBooks = db.LibraryOperations.Where(p => p.UserId == user.Id).Count();
+            ViewBag.messages = db.Message.Where(p => p.Recipient == userMail).Count();
+            ViewBag.announcements = db.Announcement.Count();
+
+            return View(announcements);
         }
 
         [HttpPost]
@@ -63,5 +73,19 @@ namespace MVCLibrary.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login", "UserLoginOperation");
         }
+
+        public PartialViewResult MessagePartial()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult UserProfilPartial()
+        {
+            var userEmail = (string)Session["email"];
+            var userID = db.Users.Where(p => p.Mail == userEmail).Select(p => p.Id).FirstOrDefault();
+            var userBring = db.Users.Find(userID);
+            return PartialView("UserProfilPartial",userBring);
+        }
+
     }
 }
