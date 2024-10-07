@@ -8,6 +8,7 @@ using System.Web.Security;
 
 namespace MVCLibrary.Controllers
 {
+    [AllowAnonymous]
     public class UserLoginOperationController : Controller
     {
         // GET: UserLoginOperation

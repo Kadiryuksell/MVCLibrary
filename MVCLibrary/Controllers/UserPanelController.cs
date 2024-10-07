@@ -8,12 +8,13 @@ using MVCLibrary.Models.Entity;
 
 namespace MVCLibrary.Controllers
 {
+    [Authorize]
     public class UserPanelController : Controller
     {
         // GET: UserPanel
         LibraryEntities db = new LibraryEntities();
 
-        [Authorize]
+        
         public ActionResult Panel()
         {
             var userMail = (string)Session["email"];
@@ -50,7 +51,7 @@ namespace MVCLibrary.Controllers
 
             return View(values);
         }
-
+        
         public ActionResult AnnouncementList()
         {
             var announcements = db.Announcement.ToList();
