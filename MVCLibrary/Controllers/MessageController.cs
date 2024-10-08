@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.Ajax.Utilities;
 using MVCLibrary.Models.Entity;
+using Microsoft.Security.Application;
 
 namespace MVCLibrary.Controllers
 {
@@ -56,11 +57,22 @@ namespace MVCLibrary.Controllers
             }
             message.Sender = userMail;
             message.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+            message.Recipient = message.Recipient;
+            message.Subject = message.Subject;
+            message.Content = Sanitizer.GetSafeHtmlFragment(message.Content);
             db.Message.Add(message);
             db.SaveChanges();
             return RedirectToAction("MessagePage");
         }
 
+        public PartialViewResult MessagePartial()
+        {
+            var userMail = (string)Session["email"].ToString();
+            ViewBag.incomingCount = db.Message.Where(p => p.Recipient == userMail).Count();
+            ViewBag.outgoingCount = db.Message.Where( p => p.Sender == userMail).Count();
+
+            return PartialView();
+        }
 
     }
 }
