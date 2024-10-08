@@ -8,6 +8,7 @@ using MVCLibrary.Models.Class;
 
 namespace MVCLibrary.Controllers
 {
+    [AllowAnonymous]
     public class ShowcasePanelController : Controller
     {
         // GET: ShowcasePanel

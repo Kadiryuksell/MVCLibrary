@@ -57,9 +57,6 @@ namespace MVCLibrary.Controllers
             }
             message.Sender = userMail;
             message.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
-            message.Recipient = message.Recipient;
-            message.Subject = message.Subject;
-            message.Content = Sanitizer.GetSafeHtmlFragment(message.Content);
             db.Message.Add(message);
             db.SaveChanges();
             return RedirectToAction("MessagePage");
