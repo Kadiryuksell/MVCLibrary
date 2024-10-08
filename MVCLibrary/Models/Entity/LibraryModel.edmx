@@ -14,6 +14,14 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LibraryAbout" Type="varchar(max)" />
         </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="nchar" MaxLength="10" />
+        </EntityType>
         <EntityType Name="Announcement">
           <Key>
             <PropertyRef Name="Id" />
@@ -225,6 +233,7 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="LibraryDbModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Announcement" EntityType="Self.Announcement" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
@@ -512,6 +521,7 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           <EntitySet Name="Contact" EntityType="LibraryDbModel.Contact" />
           <EntitySet Name="Message" EntityType="LibraryDbModel.Message" />
           <EntitySet Name="Announcement" EntityType="LibraryDbModel.Announcement" />
+          <EntitySet Name="Admin" EntityType="LibraryDbModel.Admin" />
         </EntityContainer>
         <EntityType Name="About">
           <Key>
@@ -549,6 +559,14 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -698,6 +716,15 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Content" ColumnName="Content" />
                 <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admin">
+            <EntityTypeMapping TypeName="LibraryDbModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
