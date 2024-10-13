@@ -1,7 +1,6 @@
 ﻿
 @{
-    Layout = null;
-}
+    Layout = null;}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <!DOCTYPE html>
 <html>
@@ -62,17 +61,20 @@
         <a href="/User/UserList/"><i class="glyphicon glyphicon-user"></i>&nbsp; Users</a>
         <a href="/Author/AuthorList/"><i class="glyphicon glyphicon-pencil"></i>&nbsp; Authors</a>
         <a href="/Employee/EmployeeList/"><i class="glyphicon glyphicon-briefcase"></i>&nbsp; Employee</a>
-        <a href="/LendBook/LendBookAdd/"><i class="glyphicon glyphicon-save"></i>&nbsp; Lend a book</a>
-        <a href="/LendBook/BorrowedBooklist/"><i class="glyphicon glyphicon-open"></i>&nbsp; Borrow a book</a>
         <a href="/Dashboard/DashboardPage/"><i class="glyphicon glyphicon-sort"></i>&nbsp; Dashboard</a>
         <a href="/Announcement/AnnouncementList/"><i class="glyphicon glyphicon-earphone"></i>&nbsp; Announcement</a>
         <a href="#"><i class="glyphicon glyphicon-euro"></i>&nbsp; Cash</a>
         <a href="/Operation/OperationList/"><i class="glyphicon glyphicon-dashboard"></i>&nbsp; Operations</a>
         <a href="/Dashboard/Gallery/"><i class="glyphicon glyphicon-picture"></i>&nbsp; Gallery</a>
         <a href="/ShowcasePanel/ShowcasePanel/"><i class="glyphicon glyphicon-gift"></i>&nbsp; Showcase Panel</a>
-        <a href="/Settings/SettingPage/"><i class="glyphicon glyphicon-cog"></i>&nbsp; Settings</a>
+        @if (User.IsInRole("A"))
+        {
+            <a href="/LendBook/LendBookAdd/"><i class="glyphicon glyphicon-save"></i>&nbsp; Lend a book</a>
+            <a href="/LendBook/BorrowedBooklist/"><i class="glyphicon glyphicon-open"></i>&nbsp; Borrow a book</a>
+            <a href="/Settings/SettingPage/"><i class="glyphicon glyphicon-cog"></i>&nbsp; Settings</a>
+        }
         <a href="#"><i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp; Help</a>
-        <a href="#"><i class="glyphicon glyphicon-remove-sign"></i>&nbsp; Exit</a>
+        <a href="/AdminLogin/Exit/"><i class="glyphicon glyphicon-remove-sign"></i>&nbsp; Exit</a>
     </div>
 
     <div class="main">

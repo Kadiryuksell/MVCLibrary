@@ -34,6 +34,7 @@ namespace MVCLibrary.Controllers
             Session["photo"] = userInfo.Photo;
             Session["fullName"] = userInfo.Name + " " + userInfo.LastName;
 
+
             return RedirectToAction("Panel", "UserPanel");
         }
 

@@ -31,5 +31,11 @@ namespace MVCLibrary.Controllers
             }
             return View();
         }
+
+        public ActionResult Exit()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login", "AdminLogin");
+        }
     }
 }
