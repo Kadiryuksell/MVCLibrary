@@ -21,6 +21,7 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserName" Type="varchar" MaxLength="50" />
           <Property Name="Password" Type="nchar" MaxLength="10" />
+          <Property Name="Authorization" Type="char" MaxLength="1" />
         </EntityType>
         <EntityType Name="Announcement">
           <Key>
@@ -567,6 +568,7 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Authorization" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -723,6 +725,7 @@ warning 6002: The table/view 'LibraryDb.dbo.About' does not have a primary key d
           <EntitySetMapping Name="Admin">
             <EntityTypeMapping TypeName="LibraryDbModel.Admin">
               <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Authorization" ColumnName="Authorization" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />

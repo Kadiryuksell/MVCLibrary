@@ -8,6 +8,7 @@ using MVCLibrary.Models.Entity;
 
 namespace MVCLibrary.Controllers
 {
+    [AllowAnonymous]
     public class AdminLoginController : Controller
     {
         // GET: AdminLogin

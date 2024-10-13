@@ -1,0 +1,135 @@
+﻿@using MVCLibrary.Models.Entity
+@model List<Admin>
+@{
+    ViewBag.Title = "SettingPage";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery-3.7.0.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<style>
+    input,.card,.modal{
+        font-size: 16px !important;
+    }
+    .card{
+        margin-top:20px;
+    }
+</style>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin Setting</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/WebAdminLTE/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="~/WebAdminLTE/dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+        <!-- Default box -->
+        <div class="card">
+       <div class="card-body p-0">
+           <table class="table table-striped projects">
+               <thead>
+                   <tr>
+                       <th style="width: 10%">
+                           #
+                       </th>
+                       <th style="width: 30%">
+                           User Name
+                       </th>
+                       <th style="width: 30%" class="text-center">
+                           Authorization
+                       </th>
+                       <th style="width: 30%">
+                        Operations
+                       </th>
+      
+                   </tr>
+               </thead>
+               @foreach (var admin in Model)
+               {
+                   <tbody>
+                       <tr>
+                           <td>
+                               @admin.Id
+                           </td>
+                           <td>
+                                @admin.UserName
+                           </td>
+                           <td class="project-state">
+                               <span class="badge badge-success" style="width: 100px !important;height:30px !important ;font-size: 16px !important">@admin.Authorization</span>
+                           </td>
+                           <td class="project-actions text-left">
+                               <a class="btn btn-info btn-sm" style="width: 100px !important; font-size: 16px !important" href="/Settings/AdminBring/@admin.Id">
+                                   <i class="fas fa-pencil-alt">
+                                   </i>
+                                   Edit
+                               </a>
+                               <a class="btn btn-danger btn-sm" href="/Settings/AdminDelete/@admin.Id" style="width: 100px !important; font-size: 16px !important; margin-left:20px !important">
+                                   <i class="fas fa-trash">
+                                   </i>
+                                   Delete
+                               </a>
+                           </td>
+                       </tr>
+
+                   </tbody>
+               }
+               </table>
+       </div>
+            <!-- /.card-body -->
+        </div>
+        <br />
+        <button class="btn btn-primary" data-toggle="modal" data-target="#AdminAdd" style="font-size:20px !important">New Admin Add</button>
+
+        <div class="modal" id="AdminAdd" >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">Admin Add Panel</h2>
+                    </div>
+                    <form method="post" action="/Settings/AdminAdd/">
+                        <div class="modal-body">
+                            <label>User Name</label>
+                            <input type="text" name="UserName" class="form-control" />
+                            <br />
+                            <label>Password</label>
+                            <input type="text" name="Password" class="form-control" />
+                            <br />
+                            <label>Authorization</label>
+                            <input type="text" name="Authorization" class="form-control" />
+                        </div>
+                        <button class="btn btn-success" style="font-size:20px !important; margin-left:10px !important">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- /.card -->
+    </section>
+    <!-- /.content -->
+    <!-- jQuery -->
+    <script src="~/WebAdminLTE/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/WebAdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/WebAdminLTE/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/WebAdminLTE/dist/js/demo.js"></script>
+</body>
+</html>
