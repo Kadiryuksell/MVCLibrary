@@ -1,0 +1,35 @@
+﻿@model MVCLibrary.Models.Entity.Admin
+@{
+    ViewBag.Title = "AdminBring";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<link href="~/style/AddAndBringStyle.css" rel="stylesheet" />
+
+@using (Html.BeginForm("AdminUpdate", "Settings", FormMethod.Post))
+{
+    <div class="container">
+        <div class="left-side">
+            <label>ID</label>
+            @Html.TextBoxFor(p => p.Id, new { @class = "form-control", @readonly = "readonly" })
+
+            <label>User Name</label>
+            @Html.TextBoxFor(p => p.UserName, new { @class = "form-control" })
+
+        </div>
+
+        <div class="right-side">
+            <label>Password</label>
+            @Html.TextBoxFor(p => p.Password, new { @class = "form-control" })
+
+            <label>Authorization</label>
+            @Html.TextBoxFor(p => p.Authorization, new { @class = "form-control" })
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-success">Admin Update</button>
+    </div>
+
+
+}
+

@@ -147,10 +147,12 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\LendBookController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\OperationController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\ShowcasePanelController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -2134,6 +2136,14 @@
     <Content Include="WebAdminLTE\plugins\toastr\toastr.min.css" />
     <Content Include="WebAdminLTE\plugins\toastr\toastr.min.js" />
     <Content Include="WebAdminLTE\starter.html" />
+    <Content Include="webError\css\font-awesome.min.css" />
+    <Content Include="webError\css\popuo-box.css" />
+    <Content Include="webError\css\style.css" />
+    <Content Include="webError\images\b8.jpg" />
+    <Content Include="webError\index.html" />
+    <Content Include="webError\js\jquery-2.2.3.min.js" />
+    <Content Include="webError\js\jquery.magnific-popup.js" />
+    <Content Include="webError\w3layouts-License.txt" />
     <Content Include="weblogin\css\fontawesome-all.css" />
     <Content Include="weblogin\css\style.css" />
     <Content Include="weblogin\images\cover4.jpg" />
@@ -2614,6 +2624,14 @@
     <Content Include="Views\UserPanel\UserProfilPartial.cshtml" />
     <Content Include="Views\Message\MessagePartial.cshtml" />
     <Content Include="Views\AdminLogin\Login.cshtml" />
+    <Content Include="Views\Error\Page404.cshtml" />
+    <Content Include="webError\fonts\fontawesome-webfont.eot" />
+    <Content Include="webError\fonts\fontawesome-webfont.ttf" />
+    <Content Include="webError\fonts\fontawesome-webfont.woff" />
+    <Content Include="webError\fonts\fontawesome-webfont.woff2" />
+    <Content Include="webError\fonts\FontAwesome.otf" />
+    <Content Include="Views\Settings\SettingPage.cshtml" />
+    <Content Include="Views\Settings\AdminBring.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
